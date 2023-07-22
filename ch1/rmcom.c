@@ -1,5 +1,4 @@
 #include <stdio.h>
-#define MAX 1000
 
 /* this program removes comments */
 /* Exercise 1-23 */

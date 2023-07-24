@@ -28,10 +28,10 @@ void htoi(char s[]) {
 			res[n] = s[i] - '0'; // convert the digit to its numeric value
 
 		else if ( s[i] >= 'A' && s[i] <= 'F' )
-			res[n] = 10 + s[i] - 'A'; // convert the letter to its hexa value
+			res[n] = 10 + s[i] - 'A'; // convert the letter to its hexa value (i.e. B becomes 11 )
 
 		else if ( s[i] >= 'a' && s[i] <= 'f' )
-			res[n] = 10 + s[i] - 'a'; // same
+			res[n] = 10 + s[i] - 'a'; // same (i.e. b becomes 11 )
 
 		++i;
 		++n;

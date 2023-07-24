@@ -16,7 +16,7 @@ int main() {
 	for (int i = 0; i < 5; ++i)
 		printf("%c\n", s[i]);
 
-	printf("-------------------\n"); // convert to lower case
+	printf("-------------------\n"); 
 
 	lower(s);
 	for (int i = 0; i < 5; ++i)
@@ -33,6 +33,10 @@ int main() {
 	char ss[100];
 	int i = 0;
 
+	int n = 5;
+	n = n & 0177;
+
+	printf("%d\n", n);
 }
 
 int strLen(char s[]) {
@@ -46,9 +50,7 @@ int strLen(char s[]) {
 void lower(char s[]) {
 	int i = 0;
 	while(s[i] != '\0') {
-		if (s[i] >= 'A' && s[i] <= 'Z') {
-			s[i] += ( 'a' - 'A' );
-		}
+		s[i] = ( s[i] >= 'A' && s[i] <= 'Z' ) ? s[i] += ( 'a' - 'A' ) : s[i];
 		++i;
 	}
 }

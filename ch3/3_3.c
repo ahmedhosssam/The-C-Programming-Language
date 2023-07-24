@@ -42,7 +42,24 @@ void expand(char s1[], char s2[], int size) {
 				} else { continue; }
 
 			} else { continue; }
-		} 
+
+		} else if (s1[i] >= '0' && s1[i] <= '9') {
+			c1 = (int)s1[i]; // the ASCII value of s1[i]
+			
+			if (s1[i+1] == '-') {
+				if (s1[i+2] >= '0' && s1[i+2] <= '9') {
+					c2 = (int)s1[i+2]; // same as c1
+
+					for (int j = c1; j <= c2; ++j) {
+						s2[n] = j;
+						++n;
+						printf("%c", j);
+					}
+					
+				} else { continue; }
+
+			} else { continue; }
+		}
 	}
 	printf("\n");
 }

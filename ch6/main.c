@@ -48,13 +48,13 @@ int main(int argc, char *argv[]) {
 
 	while(getword(word,MAXWORD) != EOF)
 		if(isalpha(word[0]))
-			if((p = binsearch(word, keytab, NKEYS)) >= 0)
+			if((p = binsearch(word, keytab, NKEYS)) != NULL)
 				p->count++;
-			else { continue; }
 
 	printf("-------------------\n");
 	
 	for(p = keytab; p < keytab + NKEYS; p++) {
+		printf("%p\n", p); // pointer to the address of the current stucture
 		printf("%s -- %d\n", p->word, p->count);
 	}
 }

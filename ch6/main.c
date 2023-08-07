@@ -45,6 +45,12 @@ void ungetch(int c) {
 int main(int argc, char *argv[]) {
 	struct key *p;
 	char word[MAXWORD];
+	
+	char *str1 = "hello";
+	char *str2 = "world";
+
+	int result = strcmp(str2, str1);
+	printf("%d\n", result);
 
 	while(getword(word,MAXWORD) != EOF)
 		if(isalpha(word[0]))
@@ -67,10 +73,14 @@ struct key *binsearch (char *word, struct key *tab, int n) {
 
 	while (low < high) {
 		mid = low + (high - low) / 2;
-		if((cond = strcmp(word, mid->word)) < 0)
+		if((cond = strcmp(word, mid->word)) < 0) {
+			printf("%d\n", cond);
 			high = mid;
-		else if (cond > 0)
+		}
+		else if (cond > 0) {
+			printf("%d\n", cond);
 			low = mid + 1;
+		}
 		else
 			return mid;
 	}
